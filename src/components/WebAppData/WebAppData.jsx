@@ -6,7 +6,7 @@ export default function WebAppData() {
 
   return (
     <div>
-        <p><strong>initData: </strong>{JSON.stringify(tg.initData)}</p>
+        <p><strong>initData: </strong>{decodeURI(tg.initData)}</p>
         <br />
         <p><strong>hash:</strong> {tg.initDataUnsafe?.hash}</p>
     </div>
