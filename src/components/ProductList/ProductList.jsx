@@ -46,7 +46,7 @@ export default function ProductList() {
   return (
     <div className={'list'}>
       {products.map(item => {
-        <ProductItem 
+        return <ProductItem 
           product={item}
           onAdd={onAdd}
           className={'item'}
