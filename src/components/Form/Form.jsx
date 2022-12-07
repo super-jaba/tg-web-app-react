@@ -16,6 +16,7 @@ export default function Form() {
       subject
     }
     tg.sendData(JSON.stringify(data));
+    tg.close();
   }, [tg, country, city, subject]);
 
   useEffect(() => {
