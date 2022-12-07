@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import './ProductItem.css';
 
 export default function ProductItem({product, className, onAdd}) {
-  const onAddHandler = () {
+  const onAddHandler = () => {
     onAdd(product);
   };
 
