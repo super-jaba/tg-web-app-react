@@ -11,7 +11,7 @@ export default function Form() {
 
   useEffect(() => {
     tg.MainButton.setParams({text: "Send data"});
-  }, [tg.MainButton]);
+  }, [tg]);
 
   useEffect(() => {
     if (!country || !city) {
@@ -19,7 +19,7 @@ export default function Form() {
     } else {
       tg.MainButton.show();
     }
-  }, [country, city]);
+  }, [country, city, tg]);
 
   const onChangeCountry = (e) => {
     setCountry(e.target.value);
