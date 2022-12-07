@@ -7,14 +7,14 @@ export default function WebAppData() {
   const urlParams = new URLSearchParams(tg.initData);
   const params = Object.fromEntries(urlParams);
 
-  const paramKeysSorted = Object.keys(not_sorted).sort()
+  const paramKeysSorted = Object.keys(params).sort()
     .reduce((acc, key) => ({
-        ...acc, [key]: not_sorted[key]
+        ...acc, [key]: params[key]
     }), {});
 
   let initDataString = "";
-  paramKeysSorted.forEach(key => {
-    initDataString += `${key}=${params.key}\n`;
+  paramKeysSorted.forEach((key, value) => {
+    initDataString += `${key}=${value}\n`;
   })
 
   return (
