@@ -7,11 +7,21 @@ export default function WebAppData() {
   const urlParams = new URLSearchParams(tg.initData);
   const params = Object.fromEntries(urlParams);
 
+  const paramKeysSorted = Object.keys(not_sorted).sort()
+    .reduce((acc, key) => ({
+        ...acc, [key]: not_sorted[key]
+    }), {});
+
+  let initDataString = "";
+  paramKeysSorted.forEach(key => {
+    initDataString += `${key}=${params.key}\n`;
+  })
+
   return (
     <div>
         <p><strong>initData Undecoded: </strong>{tg.initData}</p>
         <br />
-        <p><strong>initData: </strong>{JSON.stringify(params)}</p>
+        <p><strong>initData: </strong>{initDataString}</p>
         <br />
         <p><strong>hash:</strong> {tg.initDataUnsafe?.hash}</p>
     </div>
