@@ -11,7 +11,7 @@ export default function WebAppData() {
     <div>
         <p><strong>initData Undecoded: </strong>{tg.initData}</p>
         <br />
-        <p><strong>initData: </strong>{params}</p>
+        <p><strong>initData: </strong>{JSON.stringify(params)}</p>
         <br />
         <p><strong>hash:</strong> {tg.initDataUnsafe?.hash}</p>
     </div>
